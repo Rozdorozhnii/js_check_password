@@ -8,9 +8,7 @@ describe(`Function 'checkPassword':`, () => {
   });
 
   it(`should return boolean`, () => {
-    const result = checkPassword('');
-
-    expect(typeof result).toBe('boolean');
+    expect(typeof checkPassword('')).toBe('boolean');
   });
 
   it(`should return 'false' for password with non-Latin character`, () => {
@@ -34,6 +32,7 @@ describe(`Function 'checkPassword':`, () => {
   });
 
   it(`should return 'false' for too long password`, () => {
+    expect(checkPassword('P@ssword123456789')).toBe(false);
   });
 
   it(`should return 'true' for the valid password with 8 characters`, () => {
